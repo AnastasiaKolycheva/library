@@ -62,6 +62,7 @@ class SiteController extends Controller
     {
         return $this->render('index');
     }
+
      public function actionBlog()
     {
        $user = [
@@ -72,6 +73,10 @@ class SiteController extends Controller
               'author' => $user,
               'text' => 'Lorem ipsum'
           ]);
+    }
+    public function actionMap ()
+    {
+        return $this->render('map');
     }
     /* Login action.
      *

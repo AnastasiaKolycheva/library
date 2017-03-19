@@ -3,15 +3,15 @@
 use yii\helpers\Url;
 use yii\helpers\Html;
 ?>
-<h1>Список языков</h1>
-<?php /*var_dump($lang);*/?>
+<h1>Список авторов</h1>
+<?php /*var_dump($book);*/?>
 
-  <?php foreach ($lang as $key) : ?>
+  <?php foreach ($personality as $key) : ?>
           <h3>
             <?= Html::a(
-          	  $key->language_type,
-          	  ['language/view', 'id' => $key->id_language],
-          	  ['class' => 'language-link']
+          	  $key->pers_lastname,
+              ['personality/view', 'id' => $key->id_personality],
+          	  ['class' => 'pers-link']
           	 )
           	?>
           </h3>
