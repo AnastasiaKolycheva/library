@@ -2,22 +2,48 @@
 /* @var $this yii\web\View */
 use yii\helpers\Url;
 use yii\helpers\Html;
+use yii\grid\GridView;
 ?>
 <h1>Список книг</h1>
 <?php /*var_dump($book);*/?>
 
-  <?php foreach ($book as $key) : ?>
+  <?= GridView::widget([
+     'dataProvider' => $book,
+     'filterModel' => $bookSearch,
+     'columns' => ['book_name',
+        'publishing_year',
+        'language_id_language',
+        ['class' => 'yii\grid\ActionColumn',
+          'template' => '{view} {update}'
+         ]
+    ]
+
+    ])
+   
+   /*foreach ($personality as $key) : ?>
           <h3>
             <?= Html::a(
-          	  $key->book_name,
-          	  ['book/view', 'id' => $key->book_id],
-          	  ['class' => 'book-link']
-          	 )
-          	?>
-          </h3>
-  <?php endforeach; ?>     
+              $key->pers_lastname,
+              ['personality/view', 'id' => $key->id_personality],
+              ['class' => 'pers-link']
+             )
+            ?>
+          
+          
+            <?= Html::a(
+              'Редактировать',
+              ['personality/create', 'id' => $key->id_personality],
+              ['class' => 'btn pull-right']
+             )
+            ?>
+            </h3>
+            
+  <?php endforeach; */
+  ?> 
+  <br> 
   
-<p>
-    You may change the content of this page by modifying
-    the file <code><?= __FILE__; ?></code>.
-</p>
+  <?= Html::a(
+      'Добавить книгу',
+      ['book/create'],
+      ['class' => 'btn btn-success']
+    )    ?>

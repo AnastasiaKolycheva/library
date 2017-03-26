@@ -45,10 +45,10 @@ class Personality extends \yii\db\ActiveRecord
     {
         return [
             'id_personality' => 'Id Personality',
-            'pers_name' => 'Pers Name',
-            'pers_secondname' => 'Pers Secondname',
-            'pers_lastname' => 'Pers Lastname',
-            'biography' => 'Biography',
+            'pers_name' => 'Имя',
+            'pers_secondname' => 'Второе имя/отчество',
+            'pers_lastname' => 'Фамилия',
+            'biography' => 'Биография',
         ];
     }
 

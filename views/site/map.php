@@ -13,9 +13,10 @@ use yii\helpers\Html;
  	<?= Html::a('Книги',['book/index']) ?>
  </li>
   <li>
- 	Издательства
+ 	<?= Html::a('Издательства',['publishing-house/index']) ?>
  </li>
   <li>
- 	Где купить
+  <?= Html::a('Где купить',['shop/index']) ?>
+ 	
  </li>
 </ul>

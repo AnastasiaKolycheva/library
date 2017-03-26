@@ -4,6 +4,8 @@ $params = require(__DIR__ . '/params.php');
 
 $config = [
     'id' => 'basic',
+    'language' => 'ru-RU',
+    'sourceLanguage' => 'en-US',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
     'components' => [
@@ -52,8 +54,12 @@ $config = [
             'language-card/<id:\d+>' => 'language/view',
             'book/view' => 'book-card',
             'book-card/<id:\d+>' => 'book/view',
-            'personalitu/view' => 'personality-card',
-            'personality-card/<id:\d+>' => 'personality/view'
+            'personality/view' => 'personality-card',
+            'personality-card/<id:\d+>' => 'personality/view',
+            'publishing-house/view' => 'publishing-house-card',
+            'publishing-house-card/<id:\d+>' => 'publishing-house/view',
+            'shop/view' => 'shop-card',
+            'shop-card/<id:\d+>' => 'shop/view',
             ],
         ],
         

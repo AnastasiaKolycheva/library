@@ -45,10 +45,10 @@ class Book extends \yii\db\ActiveRecord
         return [
             'book_id' => 'Book ID',
             'ISBN' => 'Isbn',
-            'book_name' => 'Book Name',
-            'publishing_year' => 'Publishing Year',
-            'book_discription' => 'Book Discription',
-            'language_id_language' => 'Language Id Language',
+            'book_name' => 'Название',
+            'publishing_year' => 'Год издания',
+            'book_discription' => 'Аннотация',
+            'language_id_language' => 'Язык издания',
         ];
     }
      

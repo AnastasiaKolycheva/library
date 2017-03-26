@@ -2,11 +2,25 @@
 /* @var $this yii\web\View */
 use yii\helpers\Url;
 use yii\helpers\Html;
+use yii\grid\GridView;
 ?>
 <h1>Список авторов</h1>
 <?php /*var_dump($book);*/?>
 
-  <?php foreach ($personality as $key) : ?>
+  <?= GridView::widget([
+     'dataProvider' => $personality,
+     'filterModel' => $personalitySearch,
+     'columns' => ['pers_name',
+        'pers_secondname',
+        'pers_lastname',
+        ['class' => 'yii\grid\ActionColumn',
+          'template' => '{view} {update}'
+         ]
+    ]
+
+    ])
+   
+   /*foreach ($personality as $key) : ?>
           <h3>
             <?= Html::a(
           	  $key->pers_lastname,
@@ -14,10 +28,24 @@ use yii\helpers\Html;
           	  ['class' => 'pers-link']
           	 )
           	?>
-          </h3>
-  <?php endforeach; ?>     
+          
+          
+            <?= Html::a(
+              'Редактировать',
+              ['personality/create', 'id' => $key->id_personality],
+              ['class' => 'btn pull-right']
+             )
+            ?>
+            </h3>
+            
+  <?php endforeach; */
+  ?> 
+  <br> 
   
-<p>
-    You may change the content of this page by modifying
-    the file <code><?= __FILE__; ?></code>.
-</p>
+  <?= Html::a(
+      'Создать автора',
+      ['personality/create'],
+      ['class' => 'btn btn-success']
+    )    ?>
+  
+
