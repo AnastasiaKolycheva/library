@@ -7,6 +7,7 @@
    <div class="col-sm-4">
   <?= $form->field($shop, 'shop_name'); ?>
   <?= $form->field($shop,'shop_website'); ?>
+  <?= $form->field($shop,'photoFile')->fileInput(); ?>
   </div>
   </div>
   <?= Html::submitButton('Сохранить', [

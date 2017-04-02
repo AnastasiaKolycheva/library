@@ -38,7 +38,12 @@ class Language extends \yii\db\ActiveRecord
     {
         return [
             'id_language' => 'Id Language',
-            'language_type' => 'Language Type',
+            'language_type' => 'Язык издания',
         ];
     }
+    public function getBook()
+{
+    return $this->hasMany(Book::className(),['language_id_language' => 'id_language']);
 }
+}
+

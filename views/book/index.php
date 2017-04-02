@@ -12,7 +12,7 @@ use yii\grid\GridView;
      'filterModel' => $bookSearch,
      'columns' => ['book_name',
         'publishing_year',
-        'language_id_language',
+        'language.language_type',
         ['class' => 'yii\grid\ActionColumn',
           'template' => '{view} {update}'
          ]

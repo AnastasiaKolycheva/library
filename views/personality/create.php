@@ -9,6 +9,7 @@
   <?= $form->field($personality,'pers_secondname'); ?>
   <?= $form->field($personality,'pers_lastname'); ?>
   <?= $form->field($personality,'biography'); ?>
+  <?= $form->field($personality,'photoFile')->fileInput(); ?>
   </div>
   </div>
   <?= Html::submitButton('Сохранить', [
