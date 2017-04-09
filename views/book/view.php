@@ -1,4 +1,6 @@
-<?php
+<?php 
+use app\components\widgets\book\BookWidgetAsset;
+BookWidgetAsset::register($this); 
 use yii\helpers\Url;
 use yii\helpers\Html;
 ?>
@@ -6,7 +8,7 @@ use yii\helpers\Html;
 <div class="container row">
 	<div class="col-md-3">
   <?php if ($oneBook->photo): ?>
-    <img src="/<?=$oneBook->photo ?>">
+    <img class="imgs"src="/<?=$oneBook->photo ?>">
   <?php else : ?>
     <img src="http://placehold.it/150x150">
    <?php endif; ?>
@@ -31,7 +33,7 @@ use yii\helpers\Html;
    
   <p> <b>ISBN: </b> <?=$oneBook->ISBN ?>
   </p>
-  <p> <?=$oneBook->book_discription ?> </p>
+  <p class="bio"> <strong><?=$oneBook->book_discription ?></strong> </p>
   <p> <b> Год издания: </b>
      <?=$oneBook->publishing_year ?>
   </p>

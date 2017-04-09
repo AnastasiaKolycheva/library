@@ -6,9 +6,36 @@ use Yii;
 use app\models\Shop;
 use app\models\ShopSearch;
 use yii\data\ActiveDataProvider;
+use yii\filters\AccessControl;
 
 class ShopController extends \yii\web\Controller
 {
+
+    public function behaviors()
+    {  
+        return [
+            'access' => [
+               'class' => AccessControl::className(),
+               'only'  => ['update',],
+               /*'denyCallback' => function ($rule,$action) {
+                  throw new \yii\web\ForbiddenHttpException('Нет доступа');
+                  },*/
+               
+               'rules' => [
+               [
+                   'allow'   => false,
+                   'actions' => ['update'],
+                   'roles'   => ['?'],
+               ],
+               [
+                   'allow'   => true,
+                   'actions' => ['update'],
+                   'roles'   => ['@'],
+               ]
+               ]
+            ]
+        ];
+    }
     public function actionIndex()
     {
         $shop = Shop::find();

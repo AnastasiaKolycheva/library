@@ -1,7 +1,14 @@
+<?php 
+use app\components\widgets\book\BookWidgetAsset;
+BookWidgetAsset::register($this); 
+use yii\helpers\Url;
+use yii\helpers\Html;
+?>
+
 <div class="container row">
 	<div class="col-md-3">
   <?php if ($onePersonality->photo): ?>
-    <img src="/<?=$onePersonality->photo ?>">
+    <img class="imgs" src="/<?=$onePersonality->photo ?>">
   <?php else : ?>
     <img src="http://placehold.it/150x150">
    <?php endif; ?>
@@ -15,18 +22,22 @@
     <?=$onePersonality->pers_name ?>
     <?=$onePersonality->pers_secondname ?>
   </h3>
-  <p>
-    <?=$onePersonality->biography ?>
+  <p class="bio">
+    <strong><?=$onePersonality->biography ?></strong>
   </p>
   
-  <b>Книги:</b> <br>
+  <br>
  
-  <ul>
-  <?php foreach($onePersonality->books as $book): ?>
-    <li><?= $book->book_name ?>
-    </li>
-   
-<?php endforeach; ?>
-  </ul>
+   <?php foreach($onePersonality->books as $book): ?>
+    <div class="book col-md-2">
+    <div> 
+      <img class="imgs" src="/<?=$book->photo ?>"> </div>
+    <div class="book_title">
+  <?= Html::a($book->book_name,
+           ['book/view', 'id' => $book->book_id
+           ])
+   ?> </div>
+  </div>
+  <?php endforeach; ?>
   </div>
 </div>

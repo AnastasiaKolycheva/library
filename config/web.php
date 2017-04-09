@@ -45,7 +45,7 @@ $config = [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
-            '/' => 'site/index',
+            '/' => 'site/books',
             'about' => 'site/about',
             'contact' => 'site/contact',
             'login' => 'site/login',
@@ -61,6 +61,9 @@ $config = [
             'shop/view' => 'shop-card',
             'shop-card/<id:\d+>' => 'shop/view',
             ],
+        ],
+        'assetManager' => [
+        'forceCopy' => true,
         ],
         
     ],
